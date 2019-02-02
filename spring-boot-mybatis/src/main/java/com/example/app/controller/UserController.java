@@ -34,11 +34,10 @@ public class UserController {
         return "home";
     }
 
-    @PostMapping("/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String updateForm(@PathVariable("id") long id, Model model) {
         Users user = usersService.findByID(id);
         if (user == null) {
-            model.addAttribute("message", "Invalid user Id:" + id);
             return "home";
         }
 
@@ -51,8 +50,7 @@ public class UserController {
         if (result.hasErrors()) {
             return "update-user";
         }
-        usersService.update(id);
-        model.addAttribute("message", "Update complete");
+        usersService.update(users);
         return "home";
     }
 

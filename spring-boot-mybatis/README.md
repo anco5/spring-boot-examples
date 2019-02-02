@@ -19,8 +19,13 @@
 CREATE TABLE users (
   id BIGSERIAL,
   name VARCHAR(30),
-  password VARCHAR(55),
+  password VARCHAR(255),
   finished BOOLEAN
 );
 ```
 
+## 機能
+1. ユーザ一覧表示
+2. ユーザ登録
+3. ユーザ情報編集
+4. ユーザ削除（論理削除）
