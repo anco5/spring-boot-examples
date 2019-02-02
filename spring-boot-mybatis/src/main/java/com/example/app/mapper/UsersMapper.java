@@ -10,4 +10,10 @@ import java.util.List;
 @Component
 public interface UsersMapper {
     List<Users> findAll();
+
+    void insert(Users users);
+
+    Users findById(long id);
+
+    void update(long id);
 }

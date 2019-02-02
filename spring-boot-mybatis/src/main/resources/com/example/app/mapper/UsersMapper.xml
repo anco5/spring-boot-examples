@@ -4,4 +4,16 @@
     <select id="findAll" resultType="com.example.app.domain.Users">
         SELECT * FROM users
     </select>
+
+    <insert id="insert">
+        INSERT INTO users (name, password, finished) VALUES (#{name}, #{password}, #{finished});
+    </insert>
+
+    <select id="findById" resultType="com.example.app.domain.Users">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+
+    <update id="update">
+        UPDATE users SET name = #{name}, password = #{password}, finished = #{finished} WHERE id = #{id}
+    </update>
 </mapper>

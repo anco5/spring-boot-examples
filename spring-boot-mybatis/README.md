@@ -12,4 +12,15 @@
 |Lombok|1.18.4|ボイラーテンプレート削減|
 
 
- 
+## 準備
+
+### テーブル作成
+```postgresql
+CREATE TABLE users (
+  id BIGSERIAL,
+  name VARCHAR(30),
+  password VARCHAR(55),
+  finished BOOLEAN
+);
+```
+

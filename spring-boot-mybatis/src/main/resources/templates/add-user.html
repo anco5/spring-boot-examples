@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add User</title>
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/5.6.3/css/all.css}" />
+    <link rel="stylesheet" th:href="@{css/home.css}" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a th:href="@{/}">User List</a></li>
+                    <li role="presentation" class="active"><a th:href="@{/signup}">Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="col-md-12 signup-form">
+                <form action="#" th:action="@{/adduser}" th:object="${users}" method="post">
+                    <div class="form-group">
+                        <label class="control-label" for="name">Name</label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}"/>
+                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="password">Password</label>
+                        <input type="password" class="form-control" id="password" th:field="*{password}"/>
+                        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add User">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

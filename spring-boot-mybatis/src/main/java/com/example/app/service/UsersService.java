@@ -16,4 +16,16 @@ public class UsersService {
     public List<Users> findAll() {
         return userMapper.findAll();
     }
+
+    public void insert(Users users) {
+        userMapper.insert(users);
+    }
+
+    public Users findByID(long id) {
+        return userMapper.findById(id);
+    }
+
+    public void update(long id) {
+        userMapper.update(id);
+    }
 }
