@@ -16,4 +16,8 @@
     <update id="update">
         UPDATE users SET name = #{name}, password = #{password} WHERE id = #{id}
     </update>
+
+    <update id="lock">
+        UPDATE users SET finished = #{finished} WHERE id = #{id}
+    </update>
 </mapper>

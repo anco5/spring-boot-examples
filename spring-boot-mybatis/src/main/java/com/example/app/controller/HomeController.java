@@ -17,8 +17,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(Model model) {
-        List<Users> users = userService.findAll();
-        model.addAttribute("users", users);
+        model.addAttribute("users", userService.findAll());
         return "home";
     }
 }

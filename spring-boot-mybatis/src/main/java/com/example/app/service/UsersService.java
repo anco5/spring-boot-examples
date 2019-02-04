@@ -46,4 +46,13 @@ public class UsersService {
 
         userMapper.update(users);
     }
+
+    public void lock(Users users) {
+        if (users.isFinished()) {
+            users.setFinished(false);
+        } else {
+            users.setFinished(true);
+        }
+        userMapper.lock(users);
+    }
 }

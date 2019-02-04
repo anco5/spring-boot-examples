@@ -16,4 +16,6 @@ public interface UsersMapper {
     Users findById(long id);
 
     void update(Users users);
+
+    void lock(Users users);
 }

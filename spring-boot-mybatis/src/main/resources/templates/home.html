@@ -26,6 +26,7 @@
                             <th scope="col">PASSWORD</th>
                             <th scope="col">STATUS</th>
                             <th scope="col">EDIT</th>
+                            <th scope="col">LOCK</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,6 +37,8 @@
                             <td th:if="${user.finished}">INACTIVE</td>
                             <td th:unless="${user.finished}">ACTIVE</td>
                             <td><a th:href="@{/edit/{id}(id=${user.id})}"><i class="fas fa-edit"></i></a></td>
+                            <td th:if="${user.finished}"><a th:href="@{/lock/{id}(id=${user.id})}">Unlock</a></td>
+                            <td th:unless="${user.finished}"><a th:href="@{/lock/{id}(id=${user.id})}">Lock</a></td>
                         </tr>
                     </tbody>
                 </table>

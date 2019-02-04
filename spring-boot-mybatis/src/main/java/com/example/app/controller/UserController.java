@@ -2,6 +2,7 @@ package com.example.app.controller;
 
 import com.example.app.domain.Users;
 import com.example.app.service.UsersService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -53,6 +55,15 @@ public class UserController {
         usersService.update(users);
         return "home";
     }
+
+    @GetMapping("/lock/{id}")
+    public String lock(@PathVariable("id") long id, Model model) {
+        Users users = usersService.findByID(id);
+        usersService.lock(users);
+        model.addAttribute("users", usersService.findAll());
+        return "home";
+    }
+
 
 
 }
