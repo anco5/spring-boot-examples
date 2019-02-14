@@ -1,6 +1,6 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const $ = require('jquery');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import agent from './agent';
 
 class App extends React.Component {
 
@@ -16,11 +16,8 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        $.ajax({
-            url: 'hello',
-            data: {name: 'React'}
-        }).done(json => {
-            this.setState({name: json.name});
+        agent.Hello.get('Bill Jone').then(res => {
+            this.setState({name: res.body.name});
         })
     }
 }
