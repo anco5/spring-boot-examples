@@ -2,11 +2,20 @@
   "name": "spring-boot-kotlin-react",
   "version": "1.0.0",
   "dependencies": {
+    "history": "^4.7.2",
+    "marked": "^0.6.0",
+    "prop-types": "^15.7.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "rest": "^2.0.0",
-    "jquery": "^3.3.1",
-    "superagent": "^4.1.0"
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "superagent": "^4.1.0",
+    "superagent-promise": "^1.1.0"
   },
   "scripts": {
     "watch": "webpack --watch -d"
