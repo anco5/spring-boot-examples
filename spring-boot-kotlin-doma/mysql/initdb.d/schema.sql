@@ -1,0 +1,6 @@
+CREATE TABLE customer (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(55) NOT NULL,
+    email VARCHAR(55) NOT NULL,
+    PRIMARY KEY (id)
+);
