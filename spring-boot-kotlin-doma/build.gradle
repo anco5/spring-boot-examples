@@ -44,6 +44,13 @@ kapt {
     }
 }
 
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/kotlin/main")
+    }
+}
+
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
@@ -54,5 +61,6 @@ dependencies {
     implementation("org.seasar.doma.boot:doma-spring-boot-starter:1.1.1")
     implementation("org.seasar.doma:doma:${domaVersion}")
     kapt("org.seasar.doma:doma:${domaVersion}")
+    runtime('org.springframework.boot:spring-boot-devtools')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
